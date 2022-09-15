@@ -16,8 +16,12 @@ public class CharacterSelection : MonoBehaviour
     public int currentCharacter;
     public int currentSlot = 0;
 
+    public GameObject PlayButton;
+    public GameObject Icon;
+
     void Start()
     {
+        PlayButton.SetActive(false);    
         characters = new List<GameObject>();
 
         foreach (var chracter in characterModels) 
@@ -28,6 +32,11 @@ public class CharacterSelection : MonoBehaviour
             characters.Add(go);
         }
         ShowCharacterFromList();
+    }
+
+    private void Update()
+    {
+        CancelSelection();
     }
 
     public void ShowCharacterFromList()
@@ -68,8 +77,29 @@ public class CharacterSelection : MonoBehaviour
     {
         if (CharacterSlots != null)
         {         
-            Instantiate(characters[currentCharacter], CharacterSlots[currentSlot].position, Quaternion.identity);
+          Icon =  Instantiate(characters[currentCharacter], CharacterSlots[currentSlot].position, Quaternion.identity);
             currentSlot++;
+        }
+        if (currentSlot == 5) 
+        {
+            PlayButton.SetActive(true);
+        }
+
+    }
+
+    public void CancelSelection()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (currentSlot < 1) 
+            {
+                currentSlot = 1;
+            }
+            currentSlot--;
+            Destroy(Icon);
+           
+           
+           
 
         }
     }

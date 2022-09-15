@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ippo
   m_EditorClassIdentifier: 
   characterName: Ippo
-  characterModel: {fileID: 919132149155446097, guid: fc95c905db8536049b4e6d16557bcef7, type: 3}
+  characterModel: {fileID: 8501593954026254900, guid: 8d15f348d434e674da0297a0dc8e6359, type: 3}
   characterHealth: 100
   charcterDamage: 40

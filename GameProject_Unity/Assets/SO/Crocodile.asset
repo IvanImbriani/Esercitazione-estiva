@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Crocodile
   m_EditorClassIdentifier: 
   characterName: Crocodile
-  characterModel: {fileID: 919132149155446097, guid: eab853f5897322d45a0e87524a7f3a1f, type: 3}
+  characterModel: {fileID: 8501593954026254900, guid: 57fcad7e8098c7341a47a06af2b1dfad, type: 3}
   characterHealth: 100
   charcterDamage: 30
