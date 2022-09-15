@@ -5,12 +5,16 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour
 {
     public Character[] characterModels;
+    public Transform[] CharacterSlots = new Transform [5];
+
+   
 
     public Transform characterPoint;
 
     private List<GameObject> characters;
 
     public int currentCharacter;
+    public int currentSlot = 0;
 
     void Start()
     {
@@ -60,4 +64,13 @@ public class CharacterSelection : MonoBehaviour
         ShowCharacterFromList();
     }
 
+    public void SelectCharacter() 
+    {
+        if (CharacterSlots != null)
+        {         
+            Instantiate(characters[currentCharacter], CharacterSlots[currentSlot].position, Quaternion.identity);
+            currentSlot++;
+
+        }
+    }
 }
