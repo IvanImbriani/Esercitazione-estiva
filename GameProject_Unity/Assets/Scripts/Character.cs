@@ -9,11 +9,22 @@ public class Character :ScriptableObject
     public string characterName;
 
     public GameObject characterModel;
+    public SpriteRenderer artworkSprite;
 
     public float characterHealth;
-
     public float charcterDamage;
 
-    public enum charatcerAttribute { water, fire, wind, hearth, lightning }
+    public CharatcerAttribute characterAttribute;
+
    
+   
+}
+
+public enum CharatcerAttribute 
+{
+    Water,
+    Fire, 
+    Wind, 
+    Hearth,
+    Lightning 
 }
