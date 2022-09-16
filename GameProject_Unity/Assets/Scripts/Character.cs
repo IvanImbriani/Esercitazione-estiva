@@ -26,5 +26,6 @@ public enum CharatcerAttribute
     Fire, 
     Wind, 
     Hearth,
-    Lightning 
+    Lightning,
+    Dark
 }
