@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da6eacc24ae1b646a503a7de56053e5, type: 3}
   m_Name: Angel
   m_EditorClassIdentifier: 
-  characterName: 
-  characterModel: {fileID: 0}
+  characterName: Angel
+  characterModel: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
   artworkSprite: {fileID: 0}
   characterHealth: 0
   charcterDamage: 0

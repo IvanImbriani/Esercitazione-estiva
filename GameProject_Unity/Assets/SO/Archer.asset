@@ -17,4 +17,4 @@ MonoBehaviour:
   artworkSprite: {fileID: 0}
   characterHealth: 0
   charcterDamage: 0
-  characterAttribute: 0
+  characterAttribute: 5

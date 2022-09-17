@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+
+
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -21,7 +22,11 @@ public class CharacterSelection : MonoBehaviour
     public GameObject PlayButton;
     public GameObject Icon;
 
-  
+    public Character character;
+    public TMP_Text nameChar;
+
+
+ 
 
     void Start()
     {
@@ -46,7 +51,7 @@ public class CharacterSelection : MonoBehaviour
     public void ShowCharacterFromList()
     {
         characters[currentCharacter].SetActive(true);
-       
+        nameChar.text = characterModels[currentCharacter].characterName;
 
     }
 
