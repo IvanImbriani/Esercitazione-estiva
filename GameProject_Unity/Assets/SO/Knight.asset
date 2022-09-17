@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Knight
   characterModel: {fileID: 462170211846020894, guid: 715dc85d68802934dba7133b652e3d03, type: 3}
-  artworkSprite: {fileID: 3211599430059713886, guid: d8f301fb70e1beb4d8608e7c5f8f9490, type: 3}
+  artworkSprite: {fileID: 0}
+  charElementIcon: {fileID: 21300000, guid: 99a10b61316924d4686eef5e944c6576, type: 3}
   characterHealth: 100
   charcterDamage: 20
   characterAttribute: 0

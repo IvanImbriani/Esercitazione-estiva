@@ -15,6 +15,7 @@ MonoBehaviour:
   characterName: Archer
   characterModel: {fileID: 7301807367142600804, guid: a811d25dd780b6e439e27cdd398d4636, type: 3}
   artworkSprite: {fileID: 0}
+  charElementIcon: {fileID: 21300000, guid: 99a10b61316924d4686eef5e944c6576, type: 3}
   characterHealth: 0
   charcterDamage: 0
   characterAttribute: 5

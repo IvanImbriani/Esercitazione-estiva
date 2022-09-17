@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 
@@ -24,7 +25,7 @@ public class CharacterSelection : MonoBehaviour
 
     public Character character;
     public TMP_Text nameChar;
-
+    public Image elementIcon;
 
  
 
@@ -52,6 +53,7 @@ public class CharacterSelection : MonoBehaviour
     {
         characters[currentCharacter].SetActive(true);
         nameChar.text = characterModels[currentCharacter].characterName;
+        elementIcon.sprite = characterModels[currentCharacter].charElementIcon;
 
     }
 

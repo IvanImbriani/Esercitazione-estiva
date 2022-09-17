@@ -15,6 +15,7 @@ MonoBehaviour:
   characterName: Angel
   characterModel: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
   artworkSprite: {fileID: 0}
+  charElementIcon: {fileID: 21300000, guid: 9c77a4ae63b63454cbdfbe71da494bbd, type: 3}
   characterHealth: 0
   charcterDamage: 0
   characterAttribute: 0
