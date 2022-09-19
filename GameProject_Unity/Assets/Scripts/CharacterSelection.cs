@@ -150,7 +150,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void Play() 
     {
-        TeamManagerSingleton.Instance.SaveTeam(playerTeam);
+        TeamManagerSingleton.Instance.SaveTeam(playerTeam, enemyTeam);
         SceneManager.LoadScene(1);
         
     }
