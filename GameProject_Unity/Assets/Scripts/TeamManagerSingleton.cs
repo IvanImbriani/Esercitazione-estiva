@@ -6,6 +6,7 @@ public class TeamManagerSingleton : MonoBehaviour
 {
     public static TeamManagerSingleton Instance;
     public List<GameObject> playerTeam;
+    public List<GameObject> enemyTeam;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class TeamManagerSingleton : MonoBehaviour
     public void SaveTeam(List<GameObject> team)
     {
         this.playerTeam = new List<GameObject>(team);
-       // this.teamEnemy = new List<GameObject>();
+        this.enemyTeam= new List<GameObject>(team);
 
     }
 }

@@ -680,7 +680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72efe17439b05849a98e484864c1485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: []
+  playerTeam: []
+  enemyTeam: []
 --- !u!4 &327153525
 Transform:
   m_ObjectHideFlags: 0
@@ -874,6 +875,7 @@ MonoBehaviour:
   characterPoint: {fileID: 1834898058}
   characters: []
   playerTeam: []
+  enemyTeam: []
   currentCharacter: 0
   currentSlot: 0
   PlayButton: {fileID: 738213862}
@@ -2207,8 +2209,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
