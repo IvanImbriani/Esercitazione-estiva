@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 
@@ -15,7 +16,10 @@ public class CharacterSelection : MonoBehaviour
 
     public Transform characterPoint;
 
-    private List<GameObject> characters;
+    [SerializeField] private List<GameObject> characters;
+    [SerializeField] public List<GameObject> playerTeam;
+    
+
 
     public int currentCharacter;
     public int currentSlot = 0;
@@ -27,7 +31,19 @@ public class CharacterSelection : MonoBehaviour
     public TMP_Text nameChar;
     public Image elementIcon;
 
- 
+    //[System.Serializable]
+    //public struct CharacterUI
+    //{
+
+    //    public Sprite icon;
+    //    public GameObject prefab;
+
+      
+    //}
+
+    //public List<CharacterUI> charactersUI = new List<CharacterUI>();
+
+
 
     void Start()
     {
@@ -40,6 +56,7 @@ public class CharacterSelection : MonoBehaviour
             go.SetActive(false);
             go.transform.SetParent(characterPoint);
             characters.Add(go);
+
         }
         ShowCharacterFromList();
     }
@@ -92,11 +109,15 @@ public class CharacterSelection : MonoBehaviour
         {         
           Icon =  Instantiate(characters[currentCharacter], CharacterSlots[currentSlot].position, Quaternion.identity);
             currentSlot++;
+            playerTeam.Add(characterModels[currentCharacter].prefab);
+
         }
         if (currentSlot == 5) 
         {
             PlayButton.SetActive(true);
         }
+
+        
 
     }
 
@@ -110,10 +131,14 @@ public class CharacterSelection : MonoBehaviour
             }
             currentSlot--;
             Destroy(Icon);
-           
-           
-           
 
         }
+    }
+
+    public void Play() 
+    {
+        TeamManagerSingleton.Instance.SaveTeam(playerTeam);
+        SceneManager.LoadScene(1);
+        
     }
 }

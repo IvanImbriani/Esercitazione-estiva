@@ -11,6 +11,7 @@ public class Character :ScriptableObject
     public GameObject characterModel;
     public SpriteRenderer artworkSprite;
     public Sprite charElementIcon;
+    public GameObject prefab;
 
     public float characterHealth;
     public float charcterDamage;
