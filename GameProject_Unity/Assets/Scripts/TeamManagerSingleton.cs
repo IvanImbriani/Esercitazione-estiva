@@ -5,7 +5,7 @@ using UnityEngine;
 public class TeamManagerSingleton : MonoBehaviour
 {
     public static TeamManagerSingleton Instance;
-    public List<GameObject> team;
+    public List<GameObject> playerTeam;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class TeamManagerSingleton : MonoBehaviour
 
     public void SaveTeam(List<GameObject> team)
     {
-        this.team = new List<GameObject>(team);
+        this.playerTeam = new List<GameObject>(team);
        // this.teamEnemy = new List<GameObject>();
 
     }

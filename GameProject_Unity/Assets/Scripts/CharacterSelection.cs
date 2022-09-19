@@ -18,6 +18,7 @@ public class CharacterSelection : MonoBehaviour
 
     [SerializeField] private List<GameObject> characters;
     [SerializeField] public List<GameObject> playerTeam;
+    [SerializeField] public List<GameObject> enemyTeam;
     
 
 
@@ -113,12 +114,24 @@ public class CharacterSelection : MonoBehaviour
 
         }
         if (currentSlot == 5) 
+
         {
+            Debug.Log("prima");
+            CPUSelectCharacter();
             PlayButton.SetActive(true);
         }
+    }
 
-        
+    public void CPUSelectCharacter() 
+    {
+    //    Debug.Log("dentro");
+       for (int i = 0; i < CharacterSlots.Length; i++) 
+        {
+            int randomIndex = Random.Range(0, enemyTeam.Count);
 
+            enemyTeam.Add(characterModels[randomIndex].prefab);
+        }
+      
     }
 
     public void CancelSelection()
@@ -131,7 +144,7 @@ public class CharacterSelection : MonoBehaviour
             }
             currentSlot--;
             Destroy(Icon);
-
+            
         }
     }
 
@@ -141,4 +154,6 @@ public class CharacterSelection : MonoBehaviour
         SceneManager.LoadScene(1);
         
     }
+
+
 }

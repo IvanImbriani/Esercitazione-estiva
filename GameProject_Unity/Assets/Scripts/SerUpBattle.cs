@@ -15,7 +15,7 @@ public class SerUpBattle : MonoBehaviour
         teamManagerSingleton = FindObjectOfType<TeamManagerSingleton>();
         for (int i = 0; i < playerPoints.Length; i++)
         {
-            Instantiate(teamManagerSingleton.team[i], playerPoints[i].position, Quaternion.identity );
+            Instantiate(teamManagerSingleton.playerTeam[i], playerPoints[i].position, playerPoints[i].rotation);
         }
     }
 
