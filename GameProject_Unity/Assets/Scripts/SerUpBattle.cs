@@ -19,10 +19,10 @@ public class SerUpBattle : MonoBehaviour
             Instantiate(teamManagerSingleton.playerTeam[i], playerPoints[i].position, playerPoints[i].rotation);
             
         }
-        //for (int i = 0; i < enemyPoints.Length; i++) 
-        //{
-        //    Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i].position, enemyPoints[i].rotation);
-        //}
+        for (int i = 0; i < enemyPoints.Length; i++)
+        {
+            Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i].position, enemyPoints[i].rotation);
+        }
     }
 
 }
