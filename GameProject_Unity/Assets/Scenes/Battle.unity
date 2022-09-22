@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 410069251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 918, y: -17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116656474}
@@ -404,6 +404,9 @@ MonoBehaviour:
   character: {fileID: 0}
   battlePlayerIcon: {fileID: 0}
   battleIconPoint: {fileID: 0}
+  characterLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &516175722
 Transform:
   m_ObjectHideFlags: 0
@@ -444,7 +447,7 @@ Transform:
   m_GameObject: {fileID: 602750445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 615, y: 89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116656474}
@@ -661,7 +664,7 @@ Transform:
   m_GameObject: {fileID: 851784098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 595, y: 283, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116656474}
@@ -821,7 +824,7 @@ Transform:
   m_GameObject: {fileID: 1162878039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 873, y: 217, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116656474}
@@ -972,7 +975,7 @@ Transform:
   m_GameObject: {fileID: 1492432758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 638, y: -198, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116656474}

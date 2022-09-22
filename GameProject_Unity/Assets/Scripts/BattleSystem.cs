@@ -33,12 +33,12 @@ public class BattleSystem : MonoBehaviour
 
         for (int i = 0; i < playerPoints.Length; i++)
         {
-            GameObject playerTeam = Instantiate(teamManagerSingleton.playerTeam[i], playerPoints[i].position, playerPoints[i].rotation);
+            GameObject playerTeam = Instantiate(teamManagerSingleton.playerTeam[i], playerPoints[i]);
 
         }
         for (int i = 0; i < enemyPoints.Length; i++)
         {
-            GameObject enemyTeam = Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i].position, enemyPoints[i].rotation);
+            GameObject enemyTeam = Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i]);
 
         }
     }
