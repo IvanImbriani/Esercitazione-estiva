@@ -13,8 +13,10 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleState state;
     [SerializeField] Character character;
 
-    [SerializeField] GameObject battlePlayerIcon;
-    [SerializeField] Transform battleIconPoint;
+    [SerializeField] Image battlePlayerIcon;
+    [SerializeField] GameObject healthBarBackground;
+    [SerializeField] Image healthBarPlayer;
+    
 
     [SerializeField] LayerMask characterLayer;
 
@@ -25,6 +27,16 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         SetUpBattle();
+
+       
+    }
+
+    private void Update()
+    {
+        if (state == BattleState.PLAYERTURN)
+        {
+            SelectCharacter();
+        }
     }
 
     public void SetUpBattle()
@@ -41,29 +53,32 @@ public class BattleSystem : MonoBehaviour
             GameObject enemyTeam = Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i]);
 
         }
+        state = BattleState.PLAYERTURN;
     }
 
     public void SelectCharacter()
     {
+        
         if (Input.GetButtonDown("Fire1"))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, characterLayer);
-            if (hit != null) 
-            {
             
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, characterLayer);
+            if (hit.collider != null) 
+            {
+                var unit = hit.collider.GetComponent<Unit>();
+                battlePlayerIcon.sprite = unit.character.BattleIcon;
+                float normalizedHealth = (float)unit.health / unit.maxHealth;
+                healthBarBackground.SetActive(true);
+                healthBarPlayer.fillAmount = normalizedHealth;
+                Debug.Log(unit.health);
+
+
             }
         }
 
     }
 
-    private void OnMouseEnter()
-    {
-        battlePlayerIcon.SetActive(true);
-    }
-    private void OnMouseExit()
-    {
-        battlePlayerIcon.SetActive(false);
-    }
+   
 
 
 

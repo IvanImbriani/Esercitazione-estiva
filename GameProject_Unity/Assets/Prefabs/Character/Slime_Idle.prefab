@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 732266911212608305}
   - component: {fileID: 2780388189302812498}
   - component: {fileID: 5078659371783870432}
+  - component: {fileID: 6011839434034479454}
   m_Layer: 7
   m_Name: Slime_Idle
   m_TagString: Untagged
@@ -124,3 +125,29 @@ MonoBehaviour:
   maxHetalth: 0
   healthBar: {fileID: 0}
   character: {fileID: 11400000, guid: 4ffe0099fef0a0245aae959a54371021, type: 2}
+--- !u!61 &6011839434034479454
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747162284890129391}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005273469, y: -0.092357546}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.45, y: 0.45}
+    newSize: {x: 0.45, y: 0.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.33110338, y: 0.2652849}
+  m_EdgeRadius: 0

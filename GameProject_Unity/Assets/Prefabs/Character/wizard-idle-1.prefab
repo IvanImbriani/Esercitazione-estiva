@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3383984430586595773}
   - component: {fileID: 7339104761568277729}
   - component: {fileID: 4340324566479188447}
+  - component: {fileID: 6084799910436607429}
   m_Layer: 7
   m_Name: wizard-idle-1
   m_TagString: Untagged
@@ -124,3 +125,29 @@ MonoBehaviour:
   maxHetalth: 0
   healthBar: {fileID: 0}
   character: {fileID: 11400000, guid: c1d7294ef2b5dbd4988ebb5a8f769795, type: 2}
+--- !u!61 &6084799910436607429
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758426869059474316}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019376546, y: -0.08304249}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.81, y: 0.66}
+    newSize: {x: 0.81, y: 0.66}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.516583, y: 0.5492766}
+  m_EdgeRadius: 0

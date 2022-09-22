@@ -22,7 +22,7 @@ public class Character :ScriptableObject
 
     //durante il combattimento
     public Sprite BattleIcon;
-    public GameObject healthBar;
+    
    
 
    

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8358571022648074734}
   - component: {fileID: 5531248212466107790}
   - component: {fileID: -908652717237032204}
+  - component: {fileID: 1147213903177663142}
   m_Layer: 7
   m_Name: Monk_Idle
   m_TagString: Untagged
@@ -124,3 +125,29 @@ MonoBehaviour:
   maxHetalth: 0
   healthBar: {fileID: 0}
   character: {fileID: 11400000, guid: f7c2d912c5b180d42bf6920709413ab9, type: 2}
+--- !u!61 &1147213903177663142
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358571022648074641}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.025371492, y: -0.06599756}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.82, y: 0.6}
+    newSize: {x: 0.82, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3424601, y: 0.46800488}
+  m_EdgeRadius: 0

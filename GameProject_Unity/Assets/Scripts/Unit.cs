@@ -10,7 +10,7 @@ public class Unit : MonoBehaviour
     public int damage;
 
     public int health;
-    public int maxHetalth;
+    public int maxHealth;
 
     public GameObject healthBar;
 
@@ -28,7 +28,7 @@ public class Unit : MonoBehaviour
         unitName = character.characterName;
         damage = character.charcterDamage;
         health = character.characterHealth;
-        maxHetalth = character.characterMaxHealth;
+        maxHealth = character.characterMaxHealth;
 
     }
 }
