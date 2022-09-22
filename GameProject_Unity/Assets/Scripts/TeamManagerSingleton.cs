@@ -24,7 +24,7 @@ public class TeamManagerSingleton : MonoBehaviour
     public void SaveTeam(List<GameObject> playerTeam, List<GameObject> enemyTeam)
     {
         this.playerTeam = new List<GameObject>(playerTeam);
-        this.enemyTeam= new List<GameObject>(enemyTeam);
+        this.enemyTeam = new List<GameObject>(enemyTeam);
 
     }
 }

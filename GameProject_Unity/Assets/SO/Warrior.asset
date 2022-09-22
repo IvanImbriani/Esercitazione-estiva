@@ -16,6 +16,10 @@ MonoBehaviour:
   characterModel: {fileID: 7275285408517744098, guid: 8640377f75d65b6438e2b33e3008762f, type: 3}
   artworkSprite: {fileID: 0}
   charElementIcon: {fileID: 21300000, guid: 9c77a4ae63b63454cbdfbe71da494bbd, type: 3}
+  prefab: {fileID: 0}
   characterHealth: 0
-  charcterDamage: 0
+  characterMaxHealth: 0
+  charcterDamage: 50
   characterAttribute: 0
+  BattleIcon: {fileID: 0}
+  healthBar: {fileID: 0}

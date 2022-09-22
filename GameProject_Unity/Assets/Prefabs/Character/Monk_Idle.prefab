@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8358571022648074735}
   - component: {fileID: 8358571022648074734}
   - component: {fileID: 5531248212466107790}
-  m_Layer: 0
+  - component: {fileID: -908652717237032204}
+  m_Layer: 7
   m_Name: Monk_Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,3 +106,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-908652717237032204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358571022648074641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34845b98ed642342b6799a0071db1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: {fileID: 0}
+  damage: 0
+  health: 0
+  maxHetalth: 0
+  healthBar: {fileID: 0}
+  character: {fileID: 11400000, guid: f7c2d912c5b180d42bf6920709413ab9, type: 2}

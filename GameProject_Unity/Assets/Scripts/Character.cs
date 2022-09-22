@@ -13,10 +13,17 @@ public class Character :ScriptableObject
     public Sprite charElementIcon;
     public GameObject prefab;
 
-    public float characterHealth;
-    public float charcterDamage;
+    public int characterHealth;
+    public int characterMaxHealth;
+    public int charcterDamage;
 
     public CharatcerAttribute characterAttribute;
+
+
+    //durante il combattimento
+    public Sprite BattleIcon;
+    public GameObject healthBar;
+   
 
    
    

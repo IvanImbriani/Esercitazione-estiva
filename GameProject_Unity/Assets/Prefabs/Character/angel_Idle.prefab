@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 562382950979026175}
   - component: {fileID: 7130877519230200147}
   - component: {fileID: 8561247982437155660}
-  m_Layer: 0
+  - component: {fileID: -6555558758005389219}
+  m_Layer: 7
   m_Name: angel_Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,3 +106,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6555558758005389219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628224623276717004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34845b98ed642342b6799a0071db1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: {fileID: 0}
+  damage: 0
+  health: 0
+  maxHetalth: 0
+  healthBar: {fileID: 0}
+  character: {fileID: 11400000, guid: e3222c920d5a2a64883cc3212f965e21, type: 2}
