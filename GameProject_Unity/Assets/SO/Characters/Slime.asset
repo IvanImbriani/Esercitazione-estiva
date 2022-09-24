@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6da6eacc24ae1b646a503a7de56053e5, type: 3}
-  m_Name: Angel
+  m_Name: Slime
   m_EditorClassIdentifier: 
-  characterName: Angel
-  characterModel: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
+  characterName: Goblin
+  characterModel: {fileID: 5747162284890129391, guid: 41471b60fa01d4d4c966c2460e67db41, type: 3}
   artworkSprite: {fileID: 0}
-  charElementIcon: {fileID: 21300000, guid: 9c77a4ae63b63454cbdfbe71da494bbd, type: 3}
-  prefab: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
+  charElementIcon: {fileID: 21300000, guid: bbe35a2d5894da941a7c4122a1ff9367, type: 3}
+  prefab: {fileID: 5747162284890129391, guid: 41471b60fa01d4d4c966c2460e67db41, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
-  charcterDamage: 95
-  element: {fileID: 11400000, guid: f352babd54aa80f42bf73c1bf02c55ad, type: 2}
+  charcterDamage: 40
+  element: {fileID: 11400000, guid: 03f4245dd8f741f4d8fa8d1dcbe05efa, type: 2}
   BattleIcon: {fileID: 0}

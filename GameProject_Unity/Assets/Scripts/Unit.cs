@@ -20,11 +20,11 @@ public class Unit : MonoBehaviour
 
     public void TakeDamage(int dmg, Element elementDmg) 
     {
-        if (elementDmg == element.weakness) // se il danno è uguale ala debolezza x 1.5
+        if (element.weakness.Contains(elementDmg)) // se la mia lista contiene l'elemento del danno, il danno x 1.5
         {
             health -= dmg * 1.5f;
         }
-        else if (elementDmg.weakness == element) //la debolezza dell'attacco è il mio elemento mi fa la metà x0.5
+        else if (elementDmg.weakness.Contains(element)) //la debolezza dell'attacco è il mio elemento mi fa la metà x0.5
         {
             health -= dmg * 0.5f;
         }

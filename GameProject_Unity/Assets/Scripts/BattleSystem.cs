@@ -16,7 +16,12 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Image battlePlayerIcon;
     [SerializeField] GameObject healthBarBackground;
     [SerializeField] Image healthBarPlayer;
-    
+
+
+    [SerializeField] Image enemyPlayerIcon;
+    [SerializeField] GameObject enemyHealthBarBackground;
+    [SerializeField] Image healthBarEnemy;
+
 
     [SerializeField] LayerMask characterLayer;
     [SerializeField] LayerMask enemyLayer;
@@ -91,7 +96,7 @@ public class BattleSystem : MonoBehaviour
     public void ButtonAtk() 
     {
         StartCoroutine(PlayerMove());
-        buttonPanel.SetActive(false);
+        //buttonPanel.SetActive(false);
     }
 
     IEnumerator PlayerMove() 
@@ -103,13 +108,18 @@ public class BattleSystem : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 RaycastHit2D enemyHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
-
+     
                 if (characterSelected != null && enemyHit.collider != null)
                 {
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
                     state = BattleState.PLAYERTURN;
                     isEsecuted = true;
                 }
+                var unit = enemyHit.collider.GetComponent<Unit>();
+                enemyPlayerIcon.sprite = unit.character.BattleIcon;
+                float normalizedHealth = (float)unit.health / unit.maxHealth;
+                enemyHealthBarBackground.SetActive(true);
+                healthBarEnemy.fillAmount = normalizedHealth;
             }
            
             yield return null;

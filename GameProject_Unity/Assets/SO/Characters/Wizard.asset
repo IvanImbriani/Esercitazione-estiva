@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6da6eacc24ae1b646a503a7de56053e5, type: 3}
-  m_Name: Slime
+  m_Name: Wizard
   m_EditorClassIdentifier: 
-  characterName: Goblin
-  characterModel: {fileID: 5747162284890129391, guid: 41471b60fa01d4d4c966c2460e67db41, type: 3}
+  characterName: Wizard
+  characterModel: {fileID: 5758426869059474316, guid: c166161958f677f4782738e7de34d5d1, type: 3}
   artworkSprite: {fileID: 0}
   charElementIcon: {fileID: 21300000, guid: c7c10c43c15ae4b4b83f0e0c71910ce1, type: 3}
-  prefab: {fileID: 5747162284890129391, guid: 41471b60fa01d4d4c966c2460e67db41, type: 3}
+  prefab: {fileID: 5758426869059474316, guid: c166161958f677f4782738e7de34d5d1, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
   charcterDamage: 40
-  element: {fileID: 11400000, guid: f352babd54aa80f42bf73c1bf02c55ad, type: 2}
+  element: {fileID: 11400000, guid: 30ab9f61c0c47a1468a6781f0749a70a, type: 2}
   BattleIcon: {fileID: 0}

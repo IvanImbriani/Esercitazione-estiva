@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6da6eacc24ae1b646a503a7de56053e5, type: 3}
-  m_Name: Wizard
+  m_Name: Angel
   m_EditorClassIdentifier: 
-  characterName: Wizard
-  characterModel: {fileID: 5758426869059474316, guid: c166161958f677f4782738e7de34d5d1, type: 3}
+  characterName: Angel
+  characterModel: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
   artworkSprite: {fileID: 0}
-  charElementIcon: {fileID: 21300000, guid: 9c77a4ae63b63454cbdfbe71da494bbd, type: 3}
-  prefab: {fileID: 5758426869059474316, guid: c166161958f677f4782738e7de34d5d1, type: 3}
+  charElementIcon: {fileID: 21300000, guid: 824d98010df005a4ba8c4bbfd7d3e7b1, type: 3}
+  prefab: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
-  charcterDamage: 40
-  element: {fileID: 11400000, guid: 30ab9f61c0c47a1468a6781f0749a70a, type: 2}
+  charcterDamage: 95
+  element: {fileID: 11400000, guid: 84032d9259e0d4743b3361f510767456, type: 2}
   BattleIcon: {fileID: 0}

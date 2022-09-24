@@ -18,6 +18,7 @@ public class Character :ScriptableObject
     public int charcterDamage;
 
     public Element element;
+   
 
 
     //durante il combattimento

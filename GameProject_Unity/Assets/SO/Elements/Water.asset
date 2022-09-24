@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   elementName: 
-  weakness: {fileID: 11400000, guid: 03f4245dd8f741f4d8fa8d1dcbe05efa, type: 2}
+  weakness:
+  - {fileID: 11400000, guid: 84032d9259e0d4743b3361f510767456, type: 2}

@@ -122,9 +122,10 @@ MonoBehaviour:
   unitName: 
   damage: 0
   health: 0
-  maxHetalth: 0
+  maxHealth: 0
   healthBar: {fileID: 0}
   character: {fileID: 11400000, guid: c1d7294ef2b5dbd4988ebb5a8f769795, type: 2}
+  element: {fileID: 11400000, guid: 30ab9f61c0c47a1468a6781f0749a70a, type: 2}
 --- !u!61 &6084799910436607429
 BoxCollider2D:
   m_ObjectHideFlags: 0

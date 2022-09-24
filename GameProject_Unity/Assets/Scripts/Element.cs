@@ -6,6 +6,7 @@ using UnityEngine;
 public class Element : ScriptableObject
 {
     public string elementName;
-    public Element weakness;
+    public List<Element> weakness;
+  
 
 }

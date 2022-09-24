@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   elementName: 
-  weakness: {fileID: 11400000, guid: 30ab9f61c0c47a1468a6781f0749a70a, type: 2}
+  weakness:
+  - {fileID: 11400000, guid: 30ab9f61c0c47a1468a6781f0749a70a, type: 2}
