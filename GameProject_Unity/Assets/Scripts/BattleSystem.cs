@@ -18,7 +18,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Image healthBarPlayer;
 
 
-    [SerializeField] Image enemyPlayerIcon;
+    [SerializeField] Image enemyBattleIcon;
     [SerializeField] GameObject enemyHealthBarBackground;
     [SerializeField] Image healthBarEnemy;
 
@@ -116,7 +116,7 @@ public class BattleSystem : MonoBehaviour
                     isEsecuted = true;
                 }
                 var unit = enemyHit.collider.GetComponent<Unit>();
-                enemyPlayerIcon.sprite = unit.character.BattleIcon;
+                enemyBattleIcon.sprite = unit.character.BattleIcon;
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
                 healthBarEnemy.fillAmount = normalizedHealth;
