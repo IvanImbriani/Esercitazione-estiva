@@ -22,6 +22,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
 
     [SerializeField] Unit characterSelected;
+    [SerializeField] GameObject buttonPanel;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         SetUpBattle();
+        buttonPanel.SetActive(false);    
 
        
     }
@@ -37,14 +39,10 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN)
         {
-            SelectCharacter();
+            PlayerTurn();
         }
 
-        if (state == BattleState.PLAYERMOVE)
-        {
-
-            PlayerMove();
-        }
+        
     }
 
     public void SetUpBattle()
@@ -66,7 +64,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
     }
 
-    public void SelectCharacter()
+    public void PlayerTurn()
     {
         
         if (Input.GetButtonDown("Fire1"))
@@ -81,9 +79,8 @@ public class BattleSystem : MonoBehaviour
                 healthBarBackground.SetActive(true);
                 healthBarPlayer.fillAmount = normalizedHealth;
                 characterSelected = unit;
-                state = BattleState.PLAYERMOVE;
+                buttonPanel.SetActive(true);
 
-                
                
             }
            
@@ -91,18 +88,37 @@ public class BattleSystem : MonoBehaviour
 
     }
 
-    public void PlayerMove() 
+    public void ButtonAtk() 
     {
-        if (Input.GetButtonDown("Fire1")) 
-        {
-            RaycastHit2D enemyHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
+        StartCoroutine(PlayerMove());
+        buttonPanel.SetActive(false);
+    }
 
-            if (characterSelected != null && enemyHit.collider != null)
+    IEnumerator PlayerMove() 
+    {
+        state = BattleState.PLAYERMOVE;
+        bool isEsecuted = false;
+        while (!isEsecuted) 
+        {
+            if (Input.GetButtonDown("Fire1"))
             {
-                enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage);
-                state = BattleState.PLAYERTURN;
+                RaycastHit2D enemyHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
+
+                if (characterSelected != null && enemyHit.collider != null)
+                {
+                    enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
+                    state = BattleState.PLAYERTURN;
+                    isEsecuted = true;
+                }
             }
+           
+            yield return null;
         }
+
+        
+
+
+
          
     }
 

@@ -9,8 +9,8 @@ public class Unit : MonoBehaviour
     public string unitName;
     public int damage;
 
-    public int health;
-    public int maxHealth;
+    public float health;
+    public float maxHealth;
 
     public GameObject healthBar;
 
@@ -18,9 +18,20 @@ public class Unit : MonoBehaviour
     public Element element;
 
 
-    public void TakeDamage(int dmg) 
+    public void TakeDamage(int dmg, Element elementDmg) 
     {
-        health -= dmg;
+        if (elementDmg == element.weakness) // se il danno è uguale ala debolezza x 1.5
+        {
+            health -= dmg * 1.5f;
+        }
+        else if (elementDmg.weakness == element) //la debolezza dell'attacco è il mio elemento mi fa la metà x0.5
+        {
+            health -= dmg * 0.5f;
+        }
+        else 
+        {
+            health -= dmg;
+        }
 
         if (health <= 0) 
         {

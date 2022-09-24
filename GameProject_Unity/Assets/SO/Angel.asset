@@ -19,6 +19,6 @@ MonoBehaviour:
   prefab: {fileID: 4628224623276717004, guid: fad17baa16984834d8c435fdb6fbfd27, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
-  charcterDamage: 150
+  charcterDamage: 95
   element: {fileID: 11400000, guid: f352babd54aa80f42bf73c1bf02c55ad, type: 2}
   BattleIcon: {fileID: 0}
