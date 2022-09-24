@@ -17,24 +17,11 @@ public class Character :ScriptableObject
     public int characterMaxHealth;
     public int charcterDamage;
 
-    public CharatcerAttribute characterAttribute;
+    public Element element;
 
 
     //durante il combattimento
     public Sprite BattleIcon;
-    
-   
-
-   
    
 }
 
-public enum CharatcerAttribute 
-{
-    Water,
-    Fire, 
-    Wind, 
-    Hearth,
-    Lightning,
-    Dark
-}

@@ -20,5 +20,5 @@ MonoBehaviour:
   characterHealth: 100
   characterMaxHealth: 100
   charcterDamage: 50
-  characterAttribute: 0
+  element: {fileID: 11400000, guid: 03f4245dd8f741f4d8fa8d1dcbe05efa, type: 2}
   BattleIcon: {fileID: 0}

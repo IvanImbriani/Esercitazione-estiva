@@ -15,7 +15,18 @@ public class Unit : MonoBehaviour
     public GameObject healthBar;
 
     public Character character;
+    public Element element;
 
+
+    public void TakeDamage(int dmg) 
+    {
+        health -= dmg;
+
+        if (health <= 0) 
+        {
+            Die();
+        }
+    }
  
 
     private void Start()
@@ -29,6 +40,12 @@ public class Unit : MonoBehaviour
         damage = character.charcterDamage;
         health = character.characterHealth;
         maxHealth = character.characterMaxHealth;
+        element = character.element;
+    }
 
+    public void Die() 
+    
+    {
+        Destroy(gameObject);    
     }
 }
