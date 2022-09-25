@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum BattleState { START, PLAYERTURN, PLAYERMOVE,  ENEMYTURN, ENEMYMOVE, WON, LOST }
 public class BattleSystem : MonoBehaviour
@@ -29,6 +30,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Unit characterSelected;
     [SerializeField] GameObject buttonPanel;
 
+    [SerializeField] TextMeshProUGUI dialogueText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +49,7 @@ public class BattleSystem : MonoBehaviour
         {
             PlayerTurn();
         }
+
 
         
     }
@@ -85,7 +89,7 @@ public class BattleSystem : MonoBehaviour
                 healthBarPlayer.fillAmount = normalizedHealth;
                 characterSelected = unit;
                 buttonPanel.SetActive(true);
-
+                dialogueText.text = "SCEGLI COSA FARE";
                
             }
            
@@ -105,8 +109,11 @@ public class BattleSystem : MonoBehaviour
         bool isEsecuted = false;
         while (!isEsecuted) 
         {
+            dialogueText.text = "SELEZIONA IL BERSAGLIO";
+
             if (Input.GetButtonDown("Fire1"))
             {
+               
                 RaycastHit2D enemyHit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
      
                 if (characterSelected != null && enemyHit.collider != null)
@@ -123,14 +130,23 @@ public class BattleSystem : MonoBehaviour
             }
            
             yield return null;
+  
         }
 
+        state = BattleState.ENEMYTURN;
+        EnemyTurn();
+    }
+
+    public void EnemyTurn()
+    {
+        int randomIndex = Random.Range(0, teamManagerSingleton.enemyTeam.Count);
+        Debug.Log(randomIndex);
+      
         
 
 
-
-         
     }
+
 
 
 
