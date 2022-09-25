@@ -16,7 +16,9 @@ public class Unit : MonoBehaviour
 
     public Character character;
     public Element element;
+    public Animator animator;
 
+   
 
     public void TakeDamage(int dmg, Element elementDmg) 
     {
@@ -49,7 +51,10 @@ public class Unit : MonoBehaviour
     {
       
         ShowCharacter();
+        animator = GetComponent<Animator>();
     }
+
+
     public void ShowCharacter()
     {
         unitName = character.characterName;
@@ -57,6 +62,7 @@ public class Unit : MonoBehaviour
         health = character.characterHealth;
         maxHealth = character.characterMaxHealth;
         element = character.element;
+        
     }
 
     public void Die() 

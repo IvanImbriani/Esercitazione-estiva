@@ -41,6 +41,10 @@ public class BattleSystem : MonoBehaviour
 
     [SerializeField] GameObject abilitiesPanel;
 
+    [SerializeField] Animator animator;
+
+ 
+
     
 
    
@@ -66,6 +70,7 @@ public class BattleSystem : MonoBehaviour
         {
             PlayerTurn();
             selectionText.text = "SELEZIONA UN MEMBRO DEL TUO TEAM";
+            dialogueText.text = " ";
             
         }
        
@@ -122,7 +127,7 @@ public class BattleSystem : MonoBehaviour
     public void ButtonAtk() 
     {
         StartCoroutine(PlayerMove());
-        //buttonPanel.SetActive(false);
+       abilitiesPanel.SetActive(false);
     }
 
     IEnumerator PlayerMove() 
@@ -140,6 +145,7 @@ public class BattleSystem : MonoBehaviour
      
                 if (characterSelected != null && enemyHit.collider != null)
                 {
+                    characterSelected.animator.SetBool("IsAttacking", true);
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
                     state = BattleState.PLAYERTURN;
                     isEsecuted = true;
@@ -155,6 +161,7 @@ public class BattleSystem : MonoBehaviour
   
         }
 
+        characterSelected.animator.SetBool("IsAttacking", false);
         state = BattleState.ENEMYTURN;
         dialogueText.text = "TURNO NEMICO";
         Debug.Log("turno nemico");
@@ -204,8 +211,9 @@ public class BattleSystem : MonoBehaviour
 
     public void StrongAttack() 
     {
-        characterSelected.damage += 50;
+        characterSelected.damage += 20;
         Debug.Log(characterSelected.damage);
+        EnemyTurn();
     }
    
 }

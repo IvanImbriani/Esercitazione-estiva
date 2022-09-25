@@ -18,7 +18,7 @@ public class Character :ScriptableObject
     public int charcterDamage;
 
     public Element element;
-   
+   public Animator animator;
 
 
     //durante il combattimento
