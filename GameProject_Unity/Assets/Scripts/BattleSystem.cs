@@ -39,6 +39,10 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] List<GameObject> enemyList;
     [SerializeField] List<GameObject> playerList;
 
+    
+
+   
+
 
 
     // Start is called before the first frame update
@@ -46,9 +50,11 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         SetUpBattle();
-        buttonPanel.SetActive(false);    
-
+        buttonPanel.SetActive(false);
        
+
+
+
     }
 
     private void Update()
@@ -180,4 +186,10 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PLAYERTURN;
         selectionPanel.SetActive(true);
     }
+
+    public void HealCharacter() 
+    {
+        characterSelected.Heal();
+    }
+   
 }

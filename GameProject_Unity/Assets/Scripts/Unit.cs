@@ -38,6 +38,11 @@ public class Unit : MonoBehaviour
             Die();
         }
     }
+
+    public void Heal() 
+    {
+        health += 20;
+    }
  
 
     private void Start()
