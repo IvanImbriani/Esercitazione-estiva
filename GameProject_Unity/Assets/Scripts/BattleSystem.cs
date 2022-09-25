@@ -28,9 +28,17 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
 
     [SerializeField] Unit characterSelected;
+    [SerializeField] Unit enemySelected;
+
     [SerializeField] GameObject buttonPanel;
 
     [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] TextMeshProUGUI selectionText;
+    [SerializeField] GameObject selectionPanel;
+
+    [SerializeField] List<GameObject> enemyList;
+    [SerializeField] List<GameObject> playerList;
+
 
 
     // Start is called before the first frame update
@@ -48,8 +56,10 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.PLAYERTURN)
         {
             PlayerTurn();
+            selectionText.text = "SELEZIONA UN MEMBRO DEL TUO TEAM";
+            
         }
-
+       
 
         
     }
@@ -61,16 +71,18 @@ public class BattleSystem : MonoBehaviour
         for (int i = 0; i < playerPoints.Length; i++)
         {
             GameObject playerTeam = Instantiate(teamManagerSingleton.playerTeam[i], playerPoints[i]);
-
+            playerList.Add(playerTeam);
 
         }
         for (int i = 0; i < enemyPoints.Length; i++)
         {
             GameObject enemyTeam = Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i]);
             enemyTeam.layer = LayerMask.NameToLayer("enemyLayer");
+            enemyList.Add(enemyTeam);
 
         }
         state = BattleState.PLAYERTURN;
+        
     }
 
     public void PlayerTurn()
@@ -82,6 +94,7 @@ public class BattleSystem : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, characterLayer);
             if (hit.collider != null) 
             {
+                selectionPanel.SetActive(false);
                 var unit = hit.collider.GetComponent<Unit>();
                 battlePlayerIcon.sprite = unit.character.BattleIcon;
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
@@ -134,20 +147,37 @@ public class BattleSystem : MonoBehaviour
         }
 
         state = BattleState.ENEMYTURN;
+        dialogueText.text = "TURNO NEMICO";
+        Debug.Log("turno nemico");
         EnemyTurn();
     }
 
     public void EnemyTurn()
     {
-        int randomIndex = Random.Range(0, teamManagerSingleton.enemyTeam.Count);
-        Debug.Log(randomIndex);
-      
+        int enemyRandomIndex = Random.Range(0, enemyList.Count);
+        var enemy = enemyList[enemyRandomIndex].GetComponent<Unit>();
+        Debug.Log("index del nemico:  " + enemyRandomIndex);
+        Debug.Log("Nome del nemico:  " + teamManagerSingleton.enemyTeam[enemyRandomIndex].name);
+        enemySelected = enemy;
         
 
+        int playerRandomIndex = Random.Range(0, teamManagerSingleton.playerTeam.Count);
+        var player = playerList[playerRandomIndex].GetComponent<Unit>(); 
+        Debug.Log("index del player:  " + playerList[enemyRandomIndex]);
+        Debug.Log("Nome del player: " + playerList[enemyRandomIndex].name);
 
+
+        Debug.Log("i danni prima del take damage" + enemySelected.damage);
+        player.TakeDamage(enemySelected.damage, enemySelected.element);
+        float normalizedHealth = (float)player.health / player.maxHealth;
+        enemyHealthBarBackground.SetActive(true);
+        healthBarPlayer.fillAmount = normalizedHealth;
+        Debug.Log("la vita del player è " + player.health);
+        Debug.Log("I danni del nemico sono " + enemy.damage);
+
+        
+
+        state = BattleState.PLAYERTURN;
+        selectionPanel.SetActive(true);
     }
-
-
-
-
 }
