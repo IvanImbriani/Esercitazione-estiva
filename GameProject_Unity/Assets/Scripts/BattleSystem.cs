@@ -147,11 +147,15 @@ public class BattleSystem : MonoBehaviour
                 {
                     characterSelected.animator.SetBool("IsAttacking", true);
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
+                   
                     state = BattleState.PLAYERTURN;
                     isEsecuted = true;
                 }
                 var unit = enemyHit.collider.GetComponent<Unit>();
+               
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
+                enemySelected = enemyHit.collider.GetComponent<Unit>();
+                enemySelected.animator.SetBool("isHIt", true);
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
                 healthBarEnemy.fillAmount = normalizedHealth;
@@ -162,37 +166,46 @@ public class BattleSystem : MonoBehaviour
         }
 
         characterSelected.animator.SetBool("IsAttacking", false);
+        enemySelected.animator.SetBool("isHIt", false);
         state = BattleState.ENEMYTURN;
         dialogueText.text = "TURNO NEMICO";
         Debug.Log("turno nemico");
-        EnemyTurn();
+        StartCoroutine(EnemyTurn());
     }
 
-    public void EnemyTurn()
+   IEnumerator EnemyTurn()
     {
+        Debug.Log("entrato nellenemy turn");
+        yield return new WaitForSeconds(3f);
+
         int enemyRandomIndex = Random.Range(0, enemyList.Count);
         var enemy = enemyList[enemyRandomIndex].GetComponent<Unit>();
-        Debug.Log("index del nemico:  " + enemyRandomIndex);
-        Debug.Log("Nome del nemico:  " + teamManagerSingleton.enemyTeam[enemyRandomIndex].name);
+        //Debug.Log("index del nemico:  " + enemyRandomIndex);
+        //Debug.Log("Nome del nemico:  " + teamManagerSingleton.enemyTeam[enemyRandomIndex].name);
         enemySelected = enemy;
         
 
         int playerRandomIndex = Random.Range(0, teamManagerSingleton.playerTeam.Count);
         var player = playerList[playerRandomIndex].GetComponent<Unit>(); 
-        Debug.Log("index del player:  " + playerList[enemyRandomIndex]);
-        Debug.Log("Nome del player: " + playerList[enemyRandomIndex].name);
+        //Debug.Log("index del player:  " + playerList[enemyRandomIndex]);
+        //Debug.Log("Nome del player: " + playerList[enemyRandomIndex].name);
 
 
         Debug.Log("i danni prima del take damage" + enemySelected.damage);
+        enemySelected.animator.SetBool("IsAttacking", true);
         player.TakeDamage(enemySelected.damage, enemySelected.element);
-        
-        Debug.Log("la vita del player è " + player.health);
-        Debug.Log("I danni del nemico sono " + enemy.damage);
+        player.animator.SetBool("isHIt", true);
 
+        //Debug.Log("la vita del player è " + player.health);
+        //Debug.Log("I danni del nemico sono " + enemy.damage);
         
+        yield return null;
+        enemySelected.animator.SetBool("IsAttacking", false);
+        player.animator.SetBool("isHIt", false);
 
         state = BattleState.PLAYERTURN;
         selectionPanel.SetActive(true);
+       
     }
 
     public void openAbilitiesPanel() 
@@ -215,5 +228,8 @@ public class BattleSystem : MonoBehaviour
         Debug.Log(characterSelected.damage);
         EnemyTurn();
     }
+
+
+   
    
 }

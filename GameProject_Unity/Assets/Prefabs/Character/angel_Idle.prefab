@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 4628224623276717004}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 69e7854b66c622b438bb570c39c1dc9a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 280c0fb79fc47274199d7ce2740f0caf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   character: {fileID: 11400000, guid: e3222c920d5a2a64883cc3212f965e21, type: 2}
   element: {fileID: 11400000, guid: 84032d9259e0d4743b3361f510767456, type: 2}
+  animator: {fileID: 0}
 --- !u!61 &3144750326812204862
 BoxCollider2D:
   m_ObjectHideFlags: 0
