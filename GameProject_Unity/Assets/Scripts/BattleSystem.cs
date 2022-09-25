@@ -39,6 +39,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] List<GameObject> enemyList;
     [SerializeField] List<GameObject> playerList;
 
+    [SerializeField] GameObject abilitiesPanel;
+
     
 
    
@@ -51,6 +53,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.START;
         SetUpBattle();
         buttonPanel.SetActive(false);
+        abilitiesPanel.SetActive(false);
        
 
 
@@ -175,9 +178,7 @@ public class BattleSystem : MonoBehaviour
 
         Debug.Log("i danni prima del take damage" + enemySelected.damage);
         player.TakeDamage(enemySelected.damage, enemySelected.element);
-        float normalizedHealth = (float)player.health / player.maxHealth;
-        enemyHealthBarBackground.SetActive(true);
-        healthBarPlayer.fillAmount = normalizedHealth;
+        
         Debug.Log("la vita del player è " + player.health);
         Debug.Log("I danni del nemico sono " + enemy.damage);
 
@@ -187,9 +188,24 @@ public class BattleSystem : MonoBehaviour
         selectionPanel.SetActive(true);
     }
 
+    public void openAbilitiesPanel() 
+    {
+        abilitiesPanel.SetActive(true);
+       
+    }
     public void HealCharacter() 
     {
         characterSelected.Heal();
+        abilitiesPanel.SetActive(false);
+        state = BattleState.ENEMYTURN;
+        EnemyTurn();
+
+    }
+
+    public void StrongAttack() 
+    {
+        characterSelected.damage += 50;
+        Debug.Log(characterSelected.damage);
     }
    
 }
