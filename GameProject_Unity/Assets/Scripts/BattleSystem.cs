@@ -154,6 +154,8 @@ public class BattleSystem : MonoBehaviour
                 var unit = enemyHit.collider.GetComponent<Unit>();
                
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
+
+                yield return new WaitForSeconds(1.5f);
                 enemySelected = enemyHit.collider.GetComponent<Unit>();
                 enemySelected.animator.SetBool("isHIt", true);
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
@@ -193,6 +195,8 @@ public class BattleSystem : MonoBehaviour
 
         Debug.Log("i danni prima del take damage" + enemySelected.damage);
         enemySelected.animator.SetBool("IsAttacking", true);
+
+        yield return new WaitForSeconds(1.5f);
         player.TakeDamage(enemySelected.damage, enemySelected.element);
         player.animator.SetBool("isHIt", true);
 
@@ -215,18 +219,37 @@ public class BattleSystem : MonoBehaviour
     }
     public void HealCharacter() 
     {
+        StartCoroutine(StartHealAnim());
         characterSelected.Heal();
         abilitiesPanel.SetActive(false);
         state = BattleState.ENEMYTURN;
-        EnemyTurn();
+        StartCoroutine(EnemyTurn());
 
     }
+    IEnumerator StartHealAnim() 
+    {
+        characterSelected.animator.SetBool("isHealing", true);
+        yield return new WaitForSeconds(1.5f);
+        characterSelected.animator.SetBool("isHealing", false);
 
+
+    }
     public void StrongAttack() 
     {
+        abilitiesPanel.SetActive(false);
+        StartCoroutine(StartBuff());
         characterSelected.damage += 20;
         Debug.Log(characterSelected.damage);
-        EnemyTurn();
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+
+    IEnumerator StartBuff() 
+    {
+        characterSelected.animator.SetBool("isBuff", true);
+        yield return new WaitForSeconds(1.5f);
+        characterSelected.animator.SetBool("isBuff", false);
+      
     }
 
 
