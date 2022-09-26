@@ -15,10 +15,11 @@ MonoBehaviour:
   characterName: Knight
   characterModel: {fileID: 462170211846020894, guid: 715dc85d68802934dba7133b652e3d03, type: 3}
   artworkSprite: {fileID: 0}
-  charElementIcon: {fileID: 21300000, guid: 99a10b61316924d4686eef5e944c6576, type: 3}
+  charElementIcon: {fileID: 21300000, guid: c7c10c43c15ae4b4b83f0e0c71910ce1, type: 3}
   prefab: {fileID: 462170211846020894, guid: 715dc85d68802934dba7133b652e3d03, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
   charcterDamage: 20
-  element: {fileID: 11400000, guid: f352babd54aa80f42bf73c1bf02c55ad, type: 2}
+  element: {fileID: 11400000, guid: 30ab9f61c0c47a1468a6781f0749a70a, type: 2}
+  animator: {fileID: 0}
   BattleIcon: {fileID: 21300000, guid: 7ac5c03ae39bb264cbc127a7d93b03bf, type: 3}

@@ -40,6 +40,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] List<GameObject> playerList;
 
     [SerializeField] GameObject abilitiesPanel;
+    [SerializeField] GameObject victoryPanel;
+    [SerializeField] GameObject defeatPanel;
 
     [SerializeField] Animator animator;
 
@@ -58,6 +60,8 @@ public class BattleSystem : MonoBehaviour
         SetUpBattle();
         buttonPanel.SetActive(false);
         abilitiesPanel.SetActive(false);
+        victoryPanel.SetActive(false);
+        defeatPanel.SetActive(false);
        
 
 
@@ -161,6 +165,22 @@ public class BattleSystem : MonoBehaviour
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
                 healthBarEnemy.fillAmount = normalizedHealth;
+
+                if (enemySelected.health == 0) 
+                {
+                    Debug.Log("Nemico ucciso");
+                    enemyList.Remove(enemySelected.gameObject);
+                    enemySelected.gameObject.SetActive(false);
+                }
+
+                if (enemyList.Count == 0)
+                {
+                    Debug.Log("WIN");
+                    state = BattleState.WON;
+
+                    victoryPanel.SetActive(true);
+                    buttonPanel.SetActive(false);
+                }
             }
            
             yield return null;
@@ -207,8 +227,27 @@ public class BattleSystem : MonoBehaviour
         enemySelected.animator.SetBool("IsAttacking", false);
         player.animator.SetBool("isHIt", false);
 
+        player = characterSelected;
+
+        if (characterSelected.health <= 0)
+        {
+            Debug.Log("player ucciso");
+            playerList.Remove(characterSelected.gameObject);
+            characterSelected.gameObject.SetActive(false);
+        }
+
+        if (playerList.Count == 0) 
+        {
+            Debug.Log("DEFEAT");
+            state = BattleState.LOST;
+            defeatPanel.SetActive(true);
+            buttonPanel.SetActive(false);
+
+        }
+
         state = BattleState.PLAYERTURN;
         selectionPanel.SetActive(true);
+       
        
     }
 

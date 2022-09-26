@@ -68,6 +68,6 @@ public class Unit : MonoBehaviour
     public void Die() 
     
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
