@@ -226,7 +226,7 @@ public class BattleSystem : MonoBehaviour
         //Debug.Log("Nome del player: " + playerList[enemyRandomIndex].name);
 
 
-        Debug.Log("i danni prima del take damage" + enemySelected.damage);
+        //Debug.Log("i danni prima del take damage" + enemySelected.damage);
         enemySelected.animator.SetBool("IsAttacking", true);
 
         yield return new WaitForSeconds(1.5f);
