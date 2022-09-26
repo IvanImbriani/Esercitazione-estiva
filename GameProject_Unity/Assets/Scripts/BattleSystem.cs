@@ -45,6 +45,9 @@ public class BattleSystem : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    [SerializeField] GameObject restartButton;
+    [SerializeField] GameObject exitButton;
+
  
 
     
@@ -62,6 +65,8 @@ public class BattleSystem : MonoBehaviour
         abilitiesPanel.SetActive(false);
         victoryPanel.SetActive(false);
         defeatPanel.SetActive(false);
+        restartButton.SetActive(false);
+        exitButton.SetActive(false);
        
 
 
@@ -180,6 +185,8 @@ public class BattleSystem : MonoBehaviour
 
                     victoryPanel.SetActive(true);
                     buttonPanel.SetActive(false);
+                    restartButton.SetActive(true);
+                    exitButton.SetActive(true);
                 }
             }
            
@@ -242,6 +249,8 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.LOST;
             defeatPanel.SetActive(true);
             buttonPanel.SetActive(false);
+            restartButton.SetActive(true);
+            exitButton.SetActive(true);
 
         }
 
