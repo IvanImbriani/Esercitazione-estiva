@@ -18,17 +18,20 @@ public class Unit : MonoBehaviour
     public Element element;
     public Animator animator;
 
+    public float weaknessDamage = 1.5f;
+    public float resistance = 0.5f;
+
    
 
     public void TakeDamage(int dmg, Element elementDmg) 
     {
         if (element.weakness.Contains(elementDmg)) // se la mia lista contiene l'elemento del danno, il danno x 1.5
         {
-            health -= dmg * 1.5f;
+            health -= dmg * weaknessDamage;
         }
         else if (elementDmg.weakness.Contains(element)) //la debolezza dell'attacco è il mio elemento mi fa la metà x0.5
         {
-            health -= dmg * 0.5f;
+            health -= dmg * resistance;
         }
         else 
         {

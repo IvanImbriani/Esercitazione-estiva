@@ -47,6 +47,7 @@ public class BattleSystem : MonoBehaviour
 
     [SerializeField] GameObject restartButton;
     [SerializeField] GameObject exitButton;
+    [SerializeField] GameObject buttons;
 
  
 
@@ -67,6 +68,7 @@ public class BattleSystem : MonoBehaviour
         defeatPanel.SetActive(false);
         restartButton.SetActive(false);
         exitButton.SetActive(false);
+        buttons.SetActive(false);
        
 
 
@@ -126,7 +128,9 @@ public class BattleSystem : MonoBehaviour
                 characterSelected = unit;
                 buttonPanel.SetActive(true);
                 dialogueText.text = "SCEGLI COSA FARE";
-               
+                buttons.SetActive(true);
+
+
             }
            
         }
@@ -170,6 +174,7 @@ public class BattleSystem : MonoBehaviour
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
                 healthBarEnemy.fillAmount = normalizedHealth;
+                buttons.SetActive(false);
 
                 if (enemySelected.health == 0) 
                 {
@@ -205,6 +210,7 @@ public class BattleSystem : MonoBehaviour
    IEnumerator EnemyTurn()
     {
         Debug.Log("entrato nellenemy turn");
+        buttons.SetActive(false);
         yield return new WaitForSeconds(3f);
 
         int enemyRandomIndex = Random.Range(0, enemyList.Count);

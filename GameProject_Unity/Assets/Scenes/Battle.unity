@@ -437,17 +437,17 @@ RectTransform:
   m_GameObject: {fileID: 117203058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5565972, y: 0.5565972, z: 0.5565972}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2081802896}
-  m_Father: {fileID: 1973453940}
-  m_RootOrder: 3
+  m_Father: {fileID: 605724278}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.18}
   m_AnchorMax: {x: 0.36, y: 0.26}
-  m_AnchoredPosition: {x: 0, y: 135.2283}
-  m_SizeDelta: {x: 0, y: 49.173912}
+  m_AnchoredPosition: {x: -301.48996, y: -255.24829}
+  m_SizeDelta: {x: 403.2, y: 68.22575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117203060
 MonoBehaviour:
@@ -1019,7 +1019,7 @@ Transform:
   - {fileID: 1883265349}
   - {fileID: 1372528808}
   m_Father: {fileID: 1973453940}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516175720
 GameObject:
@@ -1091,6 +1091,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   restartButton: {fileID: 1575772685}
   exitButton: {fileID: 704007859}
+  buttons: {fileID: 605724277}
 --- !u!4 &516175722
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,17 +1135,17 @@ RectTransform:
   m_GameObject: {fileID: 531963477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5565972, y: 0.5565972, z: 0.5565972}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1795470798}
-  m_Father: {fileID: 1973453940}
-  m_RootOrder: 4
+  m_Father: {fileID: 605724278}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15, y: 0.05}
   m_AnchorMax: {x: 0.36, y: 0.13}
-  m_AnchoredPosition: {x: 0, y: 55.3208}
-  m_SizeDelta: {x: 0, y: 49.173927}
+  m_AnchoredPosition: {x: -301.48996, y: -316.95633}
+  m_SizeDelta: {x: 403.2, y: 68.22577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531963479
 MonoBehaviour:
@@ -1256,7 +1257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &563226810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,6 +1327,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2116656474}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &605724277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605724278}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &605724278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605724277}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 71.266426, y: 527.1339, z: 0}
+  m_LocalScale: {x: 1.7966316, y: 1.7966316, z: 1.7966316}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 117203059}
+  - {fileID: 531963478}
+  m_Father: {fileID: 1973453940}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618939640
 GameObject:
@@ -1495,7 +1529,7 @@ RectTransform:
   - {fileID: 104895783}
   - {fileID: 1195047262}
   m_Father: {fileID: 1973453940}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.372, y: 0}
   m_AnchorMax: {x: 0.6304583, y: 1}
@@ -3596,7 +3630,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1973453940}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3711,7 +3745,7 @@ Transform:
   - {fileID: 1475479698}
   - {fileID: 426696606}
   m_Father: {fileID: 1973453940}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897522956
 GameObject:
@@ -3851,11 +3885,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 605724278}
   - {fileID: 1888392153}
   - {fileID: 510847220}
   - {fileID: 1851741517}
-  - {fileID: 117203059}
-  - {fileID: 531963478}
   - {fileID: 641283213}
   m_Father: {fileID: 843609000}
   m_RootOrder: 1
