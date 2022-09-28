@@ -49,6 +49,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] GameObject exitButton;
     [SerializeField] GameObject buttons;
 
+    [SerializeField] Vector3 startPos;
+    [SerializeField] Vector3 hitPoint;
  
 
     
@@ -69,6 +71,9 @@ public class BattleSystem : MonoBehaviour
         restartButton.SetActive(false);
         exitButton.SetActive(false);
         buttons.SetActive(false);
+
+        
+        
        
 
 
@@ -104,6 +109,7 @@ public class BattleSystem : MonoBehaviour
             GameObject enemyTeam = Instantiate(teamManagerSingleton.enemyTeam[i], enemyPoints[i]);
             enemyTeam.layer = LayerMask.NameToLayer("enemyLayer");
             enemyList.Add(enemyTeam);
+            
 
         }
         state = BattleState.PLAYERTURN;
@@ -158,21 +164,29 @@ public class BattleSystem : MonoBehaviour
      
                 if (characterSelected != null && enemyHit.collider != null)
                 {
+                     startPos = characterSelected.transform.position;
+                    Debug.Log(startPos);
                     characterSelected.animator.SetBool("IsAttacking", true);
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
                    
                     state = BattleState.PLAYERTURN;
                     isEsecuted = true;
-                    
+                   
+
                 }
-                
+
                 var unit = enemyHit.collider.GetComponent<Unit>();
+                characterSelected.transform.position = unit.hitPoint.transform.position;
                
+                Debug.Log(startPos);
+
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
 
                 yield return new WaitForSeconds(1.5f);
-                enemySelected = enemyHit.collider.GetComponent<Unit>();
+                enemySelected = unit;  // enemyHit.collider.GetComponent<Unit>();
+                
                 enemySelected.animator.SetBool("isHIt", true);
+                characterSelected.transform.position = startPos;
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
                 healthBarEnemy.fillAmount = normalizedHealth;

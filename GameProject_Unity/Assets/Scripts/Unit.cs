@@ -21,6 +21,8 @@ public class Unit : MonoBehaviour
     public float weaknessDamage = 1.5f;
     public float resistance = 0.5f;
 
+    public Transform hitPoint;
+
    
 
     public void TakeDamage(int dmg, Element elementDmg) 
@@ -55,6 +57,7 @@ public class Unit : MonoBehaviour
       
         ShowCharacter();
         animator = GetComponent<Animator>();
+        
     }
 
 
