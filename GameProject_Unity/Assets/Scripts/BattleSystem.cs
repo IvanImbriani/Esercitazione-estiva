@@ -163,7 +163,9 @@ public class BattleSystem : MonoBehaviour
                    
                     state = BattleState.PLAYERTURN;
                     isEsecuted = true;
+                    
                 }
+                
                 var unit = enemyHit.collider.GetComponent<Unit>();
                
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
@@ -176,7 +178,7 @@ public class BattleSystem : MonoBehaviour
                 healthBarEnemy.fillAmount = normalizedHealth;
                 buttons.SetActive(false);
 
-                if (enemySelected.health == 0) 
+                if (enemySelected.health <= 0) 
                 {
                     Debug.Log("Nemico ucciso");
                     enemyList.Remove(enemySelected.gameObject);
@@ -194,7 +196,8 @@ public class BattleSystem : MonoBehaviour
                     exitButton.SetActive(true);
                 }
             }
-           
+
+            
             yield return null;
   
         }
