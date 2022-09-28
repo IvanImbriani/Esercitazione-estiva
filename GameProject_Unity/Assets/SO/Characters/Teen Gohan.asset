@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da6eacc24ae1b646a503a7de56053e5, type: 3}
+  m_Name: Teen Gohan
+  m_EditorClassIdentifier: 
+  characterName: Teen Gohan
+  characterModel: {fileID: 593615038174749260, guid: d10a57bce9d9c01409d20b185ce78ea3, type: 3}
+  artworkSprite: {fileID: 0}
+  charElementIcon: {fileID: 21300000, guid: 99a10b61316924d4686eef5e944c6576, type: 3}
+  prefab: {fileID: 593615038174749260, guid: d10a57bce9d9c01409d20b185ce78ea3, type: 3}
+  characterHealth: 100
+  characterMaxHealth: 100
+  charcterDamage: 20
+  element: {fileID: 11400000, guid: f352babd54aa80f42bf73c1bf02c55ad, type: 2}
+  animator: {fileID: 0}
+  BattleIcon: {fileID: 21300000, guid: 2e2fede9b66da674696b75eb28616712, type: 3}

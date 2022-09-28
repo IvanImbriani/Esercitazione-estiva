@@ -868,6 +868,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3222c920d5a2a64883cc3212f965e21, type: 2}
   - {fileID: 11400000, guid: 4a195dc1967597d43bc70377e5fc5606, type: 2}
   - {fileID: 11400000, guid: dc72e467f461e4141bdb5eba351333bb, type: 2}
+  - {fileID: 11400000, guid: 577ba7b5028803c428bbd199465858e5, type: 2}
   CharacterSlots:
   - {fileID: 103173511}
   - {fileID: 1053580292}
