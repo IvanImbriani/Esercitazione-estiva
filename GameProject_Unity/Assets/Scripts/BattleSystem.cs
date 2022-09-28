@@ -166,7 +166,7 @@ public class BattleSystem : MonoBehaviour
                 if (characterSelected != null && enemyHit.collider != null)
                 {
                      charStartPos = characterSelected.transform.position;
-                    Debug.Log(charStartPos);
+                    
                     characterSelected.animator.SetBool("IsAttacking", true);
                     
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
@@ -180,11 +180,11 @@ public class BattleSystem : MonoBehaviour
                 var unit = enemyHit.collider.GetComponent<Unit>();
                 characterSelected.transform.position = unit.hitPoint.transform.position;
                
-                //Debug.Log(charStartPos);
+              
 
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
 
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(0.5f);
                 characterSelected.animator.SetBool("IsAttacking", false);
                 enemySelected = unit;  // enemyHit.collider.GetComponent<Unit>();
 
@@ -249,17 +249,20 @@ public class BattleSystem : MonoBehaviour
         player.animator.SetBool("isHit", true);
 
         yield return new WaitForSeconds(1f);
-        enemySelected.transform.position = enemyStartPos;
-        Debug.Log(enemyStartPos);
-
-
-        player.TakeDamage(enemySelected.damage, enemySelected.element);
-      
-
-        
-        
-        yield return null;
         enemySelected.animator.SetBool("IsAttacking", false);
+
+        yield return new WaitForSeconds(0.5f);
+        enemySelected.transform.position = enemyStartPos;
+
+
+        
+        player.TakeDamage(enemySelected.damage, enemySelected.element);
+
+
+       
+
+        yield return null;
+        
         player.animator.SetBool("isHit", false);
 
         player = characterSelected;

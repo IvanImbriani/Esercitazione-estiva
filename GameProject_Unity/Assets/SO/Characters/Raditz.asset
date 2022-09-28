@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Raditz
   m_EditorClassIdentifier: 
   characterName: Raditz
-  characterModel: {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
+  characterModel: {fileID: 7569548915864416446, guid: 6fba06d5d1165a14386995bd5171e9ec, type: 3}
   artworkSprite: {fileID: 0}
   charElementIcon: {fileID: 21300000, guid: 9c77a4ae63b63454cbdfbe71da494bbd, type: 3}
-  prefab: {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
+  prefab: {fileID: 7569548915864416446, guid: 6fba06d5d1165a14386995bd5171e9ec, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
   charcterDamage: 20
