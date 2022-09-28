@@ -184,7 +184,7 @@ public class BattleSystem : MonoBehaviour
 
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
 
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.7f);
                 characterSelected.animator.SetBool("IsAttacking", false);
                 enemySelected = unit;  // enemyHit.collider.GetComponent<Unit>();
 
