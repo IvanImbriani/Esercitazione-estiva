@@ -49,7 +49,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] GameObject exitButton;
     [SerializeField] GameObject buttons;
 
-    [SerializeField] Vector3 startPos;
+    [SerializeField] Vector3 charStartPos;
+    [SerializeField] Vector3 enemyStartPos;
     [SerializeField] Vector3 hitPoint;
  
 
@@ -164,8 +165,8 @@ public class BattleSystem : MonoBehaviour
      
                 if (characterSelected != null && enemyHit.collider != null)
                 {
-                     startPos = characterSelected.transform.position;
-                    Debug.Log(startPos);
+                     charStartPos = characterSelected.transform.position;
+                    Debug.Log(charStartPos);
                     characterSelected.animator.SetBool("IsAttacking", true);
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
                    
@@ -178,7 +179,7 @@ public class BattleSystem : MonoBehaviour
                 var unit = enemyHit.collider.GetComponent<Unit>();
                 characterSelected.transform.position = unit.hitPoint.transform.position;
                
-                Debug.Log(startPos);
+                //Debug.Log(charStartPos);
 
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
 
@@ -186,7 +187,7 @@ public class BattleSystem : MonoBehaviour
                 enemySelected = unit;  // enemyHit.collider.GetComponent<Unit>();
                 
                 enemySelected.animator.SetBool("isHIt", true);
-                characterSelected.transform.position = startPos;
+                characterSelected.transform.position = charStartPos;
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
                 healthBarEnemy.fillAmount = normalizedHealth;
@@ -238,15 +239,19 @@ public class BattleSystem : MonoBehaviour
         
 
         int playerRandomIndex = Random.Range(0, teamManagerSingleton.playerTeam.Count);
-        var player = playerList[playerRandomIndex].GetComponent<Unit>(); 
-        //Debug.Log("index del player:  " + playerList[enemyRandomIndex]);
-        //Debug.Log("Nome del player: " + playerList[enemyRandomIndex].name);
+        var player = playerList[playerRandomIndex].GetComponent<Unit>();
 
-
-        //Debug.Log("i danni prima del take damage" + enemySelected.damage);
+       
+        enemyStartPos = enemySelected.transform.position;
+        Debug.Log(enemyStartPos);
+        enemySelected.transform.position = player.hitPoint.transform.position;
         enemySelected.animator.SetBool("IsAttacking", true);
 
         yield return new WaitForSeconds(1.5f);
+        enemySelected.transform.position = enemyStartPos;
+        Debug.Log(enemyStartPos);
+
+
         player.TakeDamage(enemySelected.damage, enemySelected.element);
         player.animator.SetBool("isHIt", true);
 
