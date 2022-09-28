@@ -1274,11 +1274,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTeam:
-  - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
-  - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
-  - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
-  - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
-  - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
+  - {fileID: 3768260280357240378, guid: e1d78c7fb1238e945a90b83a8e0de035, type: 3}
+  - {fileID: 3768260280357240378, guid: e1d78c7fb1238e945a90b83a8e0de035, type: 3}
+  - {fileID: 3768260280357240378, guid: e1d78c7fb1238e945a90b83a8e0de035, type: 3}
+  - {fileID: 3768260280357240378, guid: e1d78c7fb1238e945a90b83a8e0de035, type: 3}
+  - {fileID: 3768260280357240378, guid: e1d78c7fb1238e945a90b83a8e0de035, type: 3}
   enemyTeam:
   - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}
   - {fileID: 9165261517035111648, guid: ff255c12b695acc4d845427ff0cf28c6, type: 3}

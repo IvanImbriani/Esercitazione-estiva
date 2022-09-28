@@ -168,6 +168,7 @@ public class BattleSystem : MonoBehaviour
                      charStartPos = characterSelected.transform.position;
                     Debug.Log(charStartPos);
                     characterSelected.animator.SetBool("IsAttacking", true);
+                    
                     enemyHit.collider.GetComponent<Unit>().TakeDamage(characterSelected.damage, characterSelected.element);
                    
                     state = BattleState.PLAYERTURN;
@@ -175,7 +176,7 @@ public class BattleSystem : MonoBehaviour
                    
 
                 }
-
+                
                 var unit = enemyHit.collider.GetComponent<Unit>();
                 characterSelected.transform.position = unit.hitPoint.transform.position;
                
@@ -184,9 +185,12 @@ public class BattleSystem : MonoBehaviour
                 enemyBattleIcon.sprite = unit.character.BattleIcon;
 
                 yield return new WaitForSeconds(1.5f);
+                characterSelected.animator.SetBool("IsAttacking", false);
                 enemySelected = unit;  // enemyHit.collider.GetComponent<Unit>();
+
+                enemySelected.animator.SetBool("isHit", true);
+
                 
-                enemySelected.animator.SetBool("isHIt", true);
                 characterSelected.transform.position = charStartPos;
                 float normalizedHealth = (float)unit.health / unit.maxHealth;
                 enemyHealthBarBackground.SetActive(true);
@@ -217,8 +221,8 @@ public class BattleSystem : MonoBehaviour
   
         }
 
-        characterSelected.animator.SetBool("IsAttacking", false);
-        enemySelected.animator.SetBool("isHIt", false);
+       
+        enemySelected.animator.SetBool("isHit", false);
         state = BattleState.ENEMYTURN;
         dialogueText.text = "TURNO NEMICO";
         Debug.Log("turno nemico");
@@ -227,40 +231,36 @@ public class BattleSystem : MonoBehaviour
 
    IEnumerator EnemyTurn()
     {
-        Debug.Log("entrato nellenemy turn");
+       
         buttons.SetActive(false);
         yield return new WaitForSeconds(3f);
 
         int enemyRandomIndex = Random.Range(0, enemyList.Count);
         var enemy = enemyList[enemyRandomIndex].GetComponent<Unit>();
-        //Debug.Log("index del nemico:  " + enemyRandomIndex);
-        //Debug.Log("Nome del nemico:  " + teamManagerSingleton.enemyTeam[enemyRandomIndex].name);
         enemySelected = enemy;
         
-
         int playerRandomIndex = Random.Range(0, teamManagerSingleton.playerTeam.Count);
         var player = playerList[playerRandomIndex].GetComponent<Unit>();
 
        
         enemyStartPos = enemySelected.transform.position;
-        Debug.Log(enemyStartPos);
         enemySelected.transform.position = player.hitPoint.transform.position;
         enemySelected.animator.SetBool("IsAttacking", true);
+        player.animator.SetBool("isHit", true);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         enemySelected.transform.position = enemyStartPos;
         Debug.Log(enemyStartPos);
 
 
         player.TakeDamage(enemySelected.damage, enemySelected.element);
-        player.animator.SetBool("isHIt", true);
+      
 
-        //Debug.Log("la vita del player è " + player.health);
-        //Debug.Log("I danni del nemico sono " + enemy.damage);
+        
         
         yield return null;
         enemySelected.animator.SetBool("IsAttacking", false);
-        player.animator.SetBool("isHIt", false);
+        player.animator.SetBool("isHit", false);
 
         player = characterSelected;
 
