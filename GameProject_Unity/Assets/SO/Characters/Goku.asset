@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Goku
   m_EditorClassIdentifier: 
   characterName: Goku
-  characterModel: {fileID: 6078925148264165667, guid: 3a53bcea4b62a1f4ca0457ccf82cf10a, type: 3}
+  characterModel: {fileID: -8558156889630908325, guid: 3a53bcea4b62a1f4ca0457ccf82cf10a, type: 3}
   artworkSprite: {fileID: 0}
   charElementIcon: {fileID: 21300000, guid: 9c77a4ae63b63454cbdfbe71da494bbd, type: 3}
-  prefab: {fileID: 6078925148264165667, guid: 3a53bcea4b62a1f4ca0457ccf82cf10a, type: 3}
+  prefab: {fileID: -8558156889630908325, guid: 3a53bcea4b62a1f4ca0457ccf82cf10a, type: 3}
   characterHealth: 100
   characterMaxHealth: 100
   charcterDamage: 20
   element: {fileID: 11400000, guid: cdcbc97169a07924bab1e08757dad549, type: 2}
   animator: {fileID: 0}
-  BattleIcon: {fileID: 21300000, guid: 3f7f25bb61c7d5043ba4b6b7fc32cdce, type: 3}
+  BattleIcon: {fileID: 21300000, guid: ea990ebc34da0324ea483af8b000e442, type: 3}
