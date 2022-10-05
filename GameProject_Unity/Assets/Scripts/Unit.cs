@@ -40,10 +40,10 @@ public class Unit : MonoBehaviour
             health -= dmg;
         }
 
-        if (health <= 0) 
-        {
-            Die();
-        }
+        //if (health <= 0) 
+        //{
+        //    Die();
+        //}
     }
 
     public void Heal() 
@@ -74,6 +74,6 @@ public class Unit : MonoBehaviour
     public void Die() 
     
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

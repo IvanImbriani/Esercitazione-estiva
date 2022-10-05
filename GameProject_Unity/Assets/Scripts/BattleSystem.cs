@@ -201,7 +201,8 @@ public class BattleSystem : MonoBehaviour
                 {
                     Debug.Log("Nemico ucciso");
                     enemyList.Remove(enemySelected.gameObject);
-                    enemySelected.gameObject.SetActive(false);
+                    StartCoroutine(EnemyDeadAnimation());
+                    
                 }
 
                 if (enemyList.Count == 0)
@@ -227,6 +228,15 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "TURNO NEMICO";
         Debug.Log("turno nemico");
         StartCoroutine(EnemyTurn());
+    }
+
+    IEnumerator EnemyDeadAnimation() 
+    {
+        Debug.Log("dentro animazione dead");
+        enemySelected.animator.SetBool("isDead", true);
+        yield return new WaitForSeconds(2f);
+        //enemySelected.gameObject.SetActive(false);
+        Destroy(enemySelected.gameObject);
     }
 
    IEnumerator EnemyTurn()

@@ -22,4 +22,4 @@ MonoBehaviour:
   charcterDamage: 20
   element: {fileID: 11400000, guid: f352babd54aa80f42bf73c1bf02c55ad, type: 2}
   animator: {fileID: 0}
-  BattleIcon: {fileID: 21300000, guid: a244d358608c6cb41b9cdb4ef0459ab6, type: 3}
+  BattleIcon: {fileID: 21300000, guid: aa13823960f42b24984767a892d6e78e, type: 3}
